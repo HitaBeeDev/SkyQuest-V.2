@@ -8,7 +8,7 @@ import { FreeMode, Pagination } from "swiper/modules";
 
 const ActiveSlider = () => {
   return (
-    <div className="flex items-center justify-center flex-col h-[900px] bg-[#6c34af]">
+    <div className="flex items-center justify-center flex-col">
       <Swiper
         breakpoints={{
           340: {
