@@ -1,5 +1,11 @@
+import CarouselSlider from "./CarouselSlider";
+
 function Container() {
-  return <div></div>;
+  return (
+    <div>
+      <CarouselSlider />
+    </div>
+  );
 }
 
 export default Container;
