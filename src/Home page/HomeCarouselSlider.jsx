@@ -6,7 +6,7 @@ import "swiper/css/free-mode";
 
 import { FreeMode, Pagination } from "swiper/modules";
 
-const ActiveSlider = () => {
+const HomeCarouselSlider = () => {
   return (
     <div className="flex items-center justify-center flex-col">
       <Swiper
@@ -81,4 +81,4 @@ const ActiveSlider = () => {
   );
 };
 
-export default ActiveSlider;
+export default HomeCarouselSlider;
