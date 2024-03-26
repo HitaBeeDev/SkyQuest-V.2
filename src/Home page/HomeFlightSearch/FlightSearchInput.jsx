@@ -52,9 +52,7 @@ export default function FlightSearchInput({ label, optionField }) {
         setOpen(false);
       }}
       isOptionEqualToValue={(option, value) => option.title === value.title}
-      getOptionLabel={(option) => (
-        <span className="text-xs">{option[optionField]}</span>
-      )}
+      getOptionLabel={(option) => option[optionField]}
       options={options}
       loading={loading}
       renderInput={(params) => (
@@ -81,6 +79,9 @@ export default function FlightSearchInput({ label, optionField }) {
             },
           }}
         />
+      )}
+      ListboxComponent={(props) => (
+        <div {...props} style={{ fontSize: "0.75rem" }} />
       )}
     />
   );
