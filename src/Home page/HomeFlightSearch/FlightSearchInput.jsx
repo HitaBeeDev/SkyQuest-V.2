@@ -10,7 +10,7 @@ function sleep(duration) {
   });
 }
 
-export default function FlightSearchInput() {
+export default function FlightSearchInput({ label, optionField }) {
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState([]);
   const loading = open && options.length === 0;
@@ -43,7 +43,7 @@ export default function FlightSearchInput() {
   return (
     <Autocomplete
       id="asynchronous-demo"
-      sx={{ width: 300 }}
+      sx={{ width: 400 }}
       open={open}
       onOpen={() => {
         setOpen(true);
@@ -52,13 +52,13 @@ export default function FlightSearchInput() {
         setOpen(false);
       }}
       isOptionEqualToValue={(option, value) => option.title === value.title}
-      getOptionLabel={(option) => option.departure}
+      getOptionLabel={(option) => option[optionField]}
       options={options}
       loading={loading}
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Select departure location"
+          label={label}
           InputProps={{
             ...params.InputProps,
             endAdornment: (

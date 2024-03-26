@@ -6,20 +6,19 @@ function HomeFlightSearch() {
   return (
     <form className="flex flex-col justify-between h-full p-32">
       <div className="flex flex-row justify-between">
-        <FlightSearchInput />
-        <div className="flex flex-col">
-          <label htmlFor="from">From</label>
-          <input id="from" type="text" placeholder="Enter departure location" />
-        </div>
+        <FlightSearchInput
+          optionField="departure"
+          label="Enter departure location"
+        />
 
         <button type="button">
           <FontAwesomeIcon icon={faArrowRightArrowLeft} />
         </button>
 
-        <div className="flex flex-col">
-          <label htmlFor="to">To</label>
-          <input id="to" type="text" placeholder="Enter destination location" />
-        </div>
+        <FlightSearchInput
+          optionField="arrival"
+          label="Enter destination location"
+        />
       </div>
 
       <div className="flex flex-row justify-between">
