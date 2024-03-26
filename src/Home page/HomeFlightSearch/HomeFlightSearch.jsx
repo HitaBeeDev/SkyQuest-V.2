@@ -3,8 +3,8 @@ import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 function HomeFlightSearch() {
   return (
-    <form className="flex flex-col justify-between h-full p-10">
-      <div>
+    <form className="flex flex-col justify-between h-full p-32">
+      <div className="flex flex-row justify-between">
         <div className="flex flex-col">
           <label htmlFor="from">From</label>
           <input id="from" type="text" placeholder="Enter departure location" />
@@ -14,19 +14,23 @@ function HomeFlightSearch() {
           <FontAwesomeIcon icon={faArrowRightArrowLeft} />
         </button>
 
-        <div>
+        <div className="flex flex-col">
           <label htmlFor="to">To</label>
           <input id="to" type="text" placeholder="Enter destination location" />
         </div>
       </div>
 
-      <div>
-        <label htmlFor="departureTime">Departure Time</label>
-        <input id="departureTime" type="datetime-local" />
+      <div className="flex flex-row justify-between">
+        <div className="flex flex-col">
+          <label htmlFor="departureTime">Departure Time</label>
+          <input id="departureTime" type="datetime-local" />
+        </div>
 
-        <div>
-          <label htmlFor="arrivalTime">Arrival Time</label>
-          <input id="arrivalTime" type="datetime-local" />
+        <div className="flex flex-col">
+          <div className="flex flex-col">
+            <label htmlFor="arrivalTime">Arrival Time</label>
+            <input id="arrivalTime" type="datetime-local" />
+          </div>
 
           <button>one-way</button>
         </div>
