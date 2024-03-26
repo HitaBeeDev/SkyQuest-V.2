@@ -1,14 +1,33 @@
 function HomeFlightSearch() {
   return (
-    <div>
-      <form>
-        <label>From</label>
-        <input type="text">type where</input>
+    <form>
+      <div>
+        <label htmlFor="from">From</label>
+        <input id="from" type="text" placeholder="Enter departure location" />
 
-        <label>to</label>
-        <input type="text">type where to</input>
-      </form>
-    </div>
+        <button type="button">Reverse</button>
+
+        <label htmlFor="to">To</label>
+        <input id="to" type="text" placeholder="Enter destination location" />
+      </div>
+
+      <div>
+        <label htmlFor="departureTime">Departure Time</label>
+        <input id="departureTime" type="datetime-local" />
+
+        <label htmlFor="arrivalTime">Arrival Time</label>
+        <input id="arrivalTime" type="datetime-local" />
+      </div>
+
+      <div>
+        <label htmlFor="direct">Direct Flight</label>
+        <input id="direct" type="checkbox" />
+      </div>
+
+      <div>
+        <button type="submit">Search</button>
+      </div>
+    </form>
   );
 }
 

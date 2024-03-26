@@ -8,7 +8,7 @@ import { FreeMode, Pagination } from "swiper/modules";
 
 const HomeCarouselSlider = () => {
   return (
-    <div className="flex items-center justify-center p-10 bg-red-300 h-screen">
+    <div className="flex items-center justify-center p-10 h-screen">
       <Swiper
         freeMode={true}
         pagination={{
@@ -19,7 +19,7 @@ const HomeCarouselSlider = () => {
         speed={200}
       >
         <SwiperSlide>
-          <div className="bg-blue-100 flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center">
             <div className="flex flex-col justify-center items-center gap-5">
               <div className="bg-blue-300 h-72 p-10 m-10">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
