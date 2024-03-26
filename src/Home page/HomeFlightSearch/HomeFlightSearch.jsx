@@ -36,10 +36,12 @@ function HomeFlightSearch() {
         </div>
       </div>
 
-      <div>
-        <div>
-          <label htmlFor="direct">Direct Flight</label>
-          <input id="direct" type="checkbox" />
+      <div className="flex flex-row justify-between">
+        <div className="flex flex-col">
+          <div className="flex flex-row gap-5">
+            <label htmlFor="direct">Direct Flight</label>
+            <input id="direct" type="checkbox" />
+          </div>
 
           <div>modal</div>
         </div>
