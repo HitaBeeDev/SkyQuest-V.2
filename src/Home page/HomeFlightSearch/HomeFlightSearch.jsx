@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import FlightSearchInput from "./FlightSearchInput";
 
 function HomeFlightSearch() {
   return (
     <form className="flex flex-col justify-between h-full p-32">
       <div className="flex flex-row justify-between">
+        <FlightSearchInput />
         <div className="flex flex-col">
           <label htmlFor="from">From</label>
           <input id="from" type="text" placeholder="Enter departure location" />
