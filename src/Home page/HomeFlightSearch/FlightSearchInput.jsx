@@ -52,13 +52,13 @@ export default function FlightSearchInput() {
         setOpen(false);
       }}
       isOptionEqualToValue={(option, value) => option.title === value.title}
-      getOptionLabel={(option) => option.departure + " to " + option.arrival}
+      getOptionLabel={(option) => option.departure}
       options={options}
       loading={loading}
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Asynchronous"
+          label="Select departure location"
           InputProps={{
             ...params.InputProps,
             endAdornment: (
