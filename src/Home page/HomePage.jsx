@@ -3,12 +3,12 @@ import HomeFlightSearch from "./HomeFlightSearch/HomeFlightSearch";
 
 function HomePage() {
   return (
-    <div className="grid grid-cols-12">
-      <div className="bg-red-100 col-span-6">
+    <div className="grid grid-cols-12 bg-slate-300">
+      <div className="col-span-7">
         <HomeFlightSearch />
       </div>
 
-      <div className="bg-red-200 col-span-6">
+      <div className="col-span-5">
         <HomeCarouselSlider />
       </div>
     </div>
