@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRight } from "@fortawesome/free-solid-svg-icons";
+
 function HomeFlightSearch() {
   return (
     <form className="flex flex-col justify-between h-full p-10">
