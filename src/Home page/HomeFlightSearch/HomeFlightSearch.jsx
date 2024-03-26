@@ -5,15 +5,13 @@ import FlightSearchInput from "./FlightSearchInput";
 function HomeFlightSearch() {
   return (
     <form className="flex flex-col justify-between h-full p-32">
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row items-center justify-between">
         <FlightSearchInput
           optionField="departure"
           label="Enter departure location"
         />
 
-        <button type="button">
-          <FontAwesomeIcon icon={faArrowRightArrowLeft} />
-        </button>
+        <FontAwesomeIcon icon={faArrowRightArrowLeft} />
 
         <FlightSearchInput
           optionField="arrival"

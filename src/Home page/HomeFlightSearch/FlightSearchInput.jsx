@@ -42,8 +42,8 @@ export default function FlightSearchInput({ label, optionField }) {
 
   return (
     <Autocomplete
+      className="w-60 h-12 flex items-center"
       id="asynchronous-demo"
-      sx={{ width: 400 }}
       open={open}
       onOpen={() => {
         setOpen(true);
@@ -52,7 +52,9 @@ export default function FlightSearchInput({ label, optionField }) {
         setOpen(false);
       }}
       isOptionEqualToValue={(option, value) => option.title === value.title}
-      getOptionLabel={(option) => option[optionField]}
+      getOptionLabel={(option) => (
+        <span className="text-xs">{option[optionField]}</span>
+      )}
       options={options}
       loading={loading}
       renderInput={(params) => (
@@ -61,6 +63,7 @@ export default function FlightSearchInput({ label, optionField }) {
           label={label}
           InputProps={{
             ...params.InputProps,
+            style: { fontSize: "0.75rem" },
             endAdornment: (
               <Fragment>
                 {loading ? (
@@ -69,6 +72,13 @@ export default function FlightSearchInput({ label, optionField }) {
                 {params.InputProps.endAdornment}
               </Fragment>
             ),
+          }}
+          InputLabelProps={{
+            style: {
+              fontSize: "0.72rem",
+              display: "flex",
+              alignItems: "center",
+            },
           }}
         />
       )}
