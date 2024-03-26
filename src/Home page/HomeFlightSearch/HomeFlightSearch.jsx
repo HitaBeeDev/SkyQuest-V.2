@@ -1,8 +1,13 @@
 function HomeFlightSearch() {
   return (
     <div>
-      HomeFlightSearch HomeFlightSearch HomeFlightSearch HomeFlightSearch
-      HomeFlightSearch HomeFlightSearch
+      <form>
+        <label>From</label>
+        <input type="text">type where</input>
+
+        <label>to</label>
+        <input type="text">type where to</input>
+      </form>
     </div>
   );
 }
