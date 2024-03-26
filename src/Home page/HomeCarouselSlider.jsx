@@ -19,15 +19,19 @@ const HomeCarouselSlider = () => {
         speed={200}
       >
         <SwiperSlide>
-          <div className="bg-blue-100 flex justify-center items-center">
-            <div className="bg-blue-200 w-1/2 h-72">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-              voluptatibus quo corporis incidunt obcaecati fugit ex vel ut
-              voluptatem beatae culpa quis neque iste, tenetur quod natus
-              possimus voluptates assumenda?
+          <div className="bg-blue-100 flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center gap-5">
+              <div className="bg-blue-300 h-72 p-10 m-10">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+                voluptatibus quo corporis incidunt obcaecati fugit ex vel ut
+                voluptatem beatae culpa quis neque iste, tenetur quod natus
+                possimus voluptates assumenda?
+              </div>
+
+              <div>PARIS</div>
             </div>
 
-            <icon />
+            <icon className="text-red-500 group-hover:text-blue-400 w-5 h-5" />
           </div>
         </SwiperSlide>
       </Swiper>
