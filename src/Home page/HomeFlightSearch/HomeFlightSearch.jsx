@@ -8,7 +8,9 @@ function HomeFlightSearch() {
         <label htmlFor="from">From</label>
         <input id="from" type="text" placeholder="Enter departure location" />
 
-        <button type="button">Reverse</button>
+        <button type="button">
+          <FontAwesomeIcon icon={faArrowUpRight} />
+        </button>
 
         <i className="fas fa-arrow-right-arrow-left"></i>
 
