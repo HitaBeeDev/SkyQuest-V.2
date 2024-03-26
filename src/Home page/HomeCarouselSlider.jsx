@@ -16,76 +16,18 @@ const HomeCarouselSlider = () => {
         }}
         modules={[FreeMode, Pagination]}
         loop={true}
-        speed={500}
+        speed={200}
       >
         <SwiperSlide>
-          <div className="flex flex-col mb-32 group relative shadow-lg text-white rounded-xl h-[20rem] w-[40rem] cursor-pointer">
-            <div className="inset-0 bg-cover bg-center" />
-            <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50" />
-            <div className="relative flex flex-col gap-3">
-              <icon className="text-red-500 group-hover:text-blue-400 h-[20rem] w-[40rem]" />
-              <h1 className="text-xl lg:text-2xl">SLIDE 1 </h1>
-              <p className="lg:text-[18px]">
-                SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE
-                1SLIDE 1SLIDE 1SLIDE 1SLIDE 1
-              </p>
+          <div className="bg-blue-100 flex justify-center items-center">
+            <div className="bg-blue-200 w-1/2 h-72">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+              voluptatibus quo corporis incidunt obcaecati fugit ex vel ut
+              voluptatem beatae culpa quis neque iste, tenetur quod natus
+              possimus voluptates assumenda?
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex flex-col mb-32 group relative shadow-lg text-white rounded-xl h-[20rem] w-[40rem] cursor-pointer">
-            <div className="inset-0 bg-cover bg-center" />
-            <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50" />
-            <div className="relative flex flex-col gap-3">
-              <icon className="text-red-500 group-hover:text-blue-400 h-[20rem] w-[40rem]" />
-              <h1 className="text-xl lg:text-2xl">SLIDE 1 </h1>
-              <p className="lg:text-[18px]">
-                SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE
-                1SLIDE 1SLIDE 1SLIDE 1SLIDE 1
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex flex-col mb-32 group relative shadow-lg text-white rounded-xl h-[20rem] w-[40rem] cursor-pointer">
-            <div className="inset-0 bg-cover bg-center" />
-            <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50" />
-            <div className="relative flex flex-col gap-3">
-              <icon className="text-red-500 group-hover:text-blue-400 h-[20rem] w-[40rem]" />
-              <h1 className="text-xl lg:text-2xl">SLIDE 1 </h1>
-              <p className="lg:text-[18px]">
-                SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE
-                1SLIDE 1SLIDE 1SLIDE 1SLIDE 1
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex flex-col mb-32 group relative shadow-lg text-white rounded-xl h-[20rem] w-[40rem] cursor-pointer">
-            <div className="inset-0 bg-cover bg-center" />
-            <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50" />
-            <div className="relative flex flex-col gap-3">
-              <icon className="text-red-500 group-hover:text-blue-400 h-[20rem] w-[40rem]" />
-              <h1 className="text-xl lg:text-2xl">SLIDE 1 </h1>
-              <p className="lg:text-[18px]">
-                SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE
-                1SLIDE 1SLIDE 1SLIDE 1SLIDE 1
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex flex-col mb-32 group relative shadow-lg text-white rounded-xl h-[20rem] w-[40rem] cursor-pointer">
-            <div className="inset-0 bg-cover bg-center" />
-            <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50" />
-            <div className="relative flex flex-col gap-3">
-              <icon className="text-red-500 group-hover:text-blue-400 h-[20rem] w-[40rem]" />
-              <h1 className="text-xl lg:text-2xl">SLIDE 1 </h1>
-              <p className="lg:text-[18px]">
-                SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE 1SLIDE
-                1SLIDE 1SLIDE 1SLIDE 1SLIDE 1
-              </p>
-            </div>
+
+            <icon />
           </div>
         </SwiperSlide>
       </Swiper>
