@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 function HomeFlightSearch() {
   return (
@@ -9,7 +9,7 @@ function HomeFlightSearch() {
         <input id="from" type="text" placeholder="Enter departure location" />
 
         <button type="button">
-          <FontAwesomeIcon icon={faArrowUpRight} />
+          <FontAwesomeIcon icon={faArrowRightArrowLeft} />
         </button>
 
         <i className="fas fa-arrow-right-arrow-left"></i>
