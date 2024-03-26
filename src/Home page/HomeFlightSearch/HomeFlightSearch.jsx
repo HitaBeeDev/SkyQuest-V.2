@@ -15,16 +15,22 @@ function HomeFlightSearch() {
         <label htmlFor="departureTime">Departure Time</label>
         <input id="departureTime" type="datetime-local" />
 
-        <label htmlFor="arrivalTime">Arrival Time</label>
-        <input id="arrivalTime" type="datetime-local" />
+        <div>
+          <label htmlFor="arrivalTime">Arrival Time</label>
+          <input id="arrivalTime" type="datetime-local" />
+
+          <button>one-way</button>
+        </div>
       </div>
 
       <div>
-        <label htmlFor="direct">Direct Flight</label>
-        <input id="direct" type="checkbox" />
-      </div>
+        <div>
+          <label htmlFor="direct">Direct Flight</label>
+          <input id="direct" type="checkbox" />
 
-      <div>
+          <div>modal</div>
+        </div>
+
         <button type="submit">Search</button>
       </div>
     </form>
