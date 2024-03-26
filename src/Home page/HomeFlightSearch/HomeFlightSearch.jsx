@@ -1,6 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import FlightSearchInput from "./FlightSearchInput";
+
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
+// <FontAwesomeIcon icon={faArrowRightArrowLeft} />
 
 function HomeFlightSearch() {
   return (
@@ -10,8 +12,6 @@ function HomeFlightSearch() {
           optionField="departure"
           label="Enter departure location"
         />
-
-        <FontAwesomeIcon icon={faArrowRightArrowLeft} />
 
         <FlightSearchInput
           optionField="arrival"

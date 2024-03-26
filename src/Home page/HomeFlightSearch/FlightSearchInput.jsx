@@ -42,7 +42,7 @@ export default function FlightSearchInput({ label, optionField }) {
 
   return (
     <Autocomplete
-      className="w-60 h-12 flex items-center"
+      className="w-[17rem] h-12 flex items-center"
       id="asynchronous-demo"
       open={open}
       onOpen={() => {
@@ -61,7 +61,7 @@ export default function FlightSearchInput({ label, optionField }) {
           label={label}
           InputProps={{
             ...params.InputProps,
-            style: { fontSize: "0.75rem" },
+            style: { fontSize: "0.86rem" },
             endAdornment: (
               <Fragment>
                 {loading ? (
@@ -73,7 +73,7 @@ export default function FlightSearchInput({ label, optionField }) {
           }}
           InputLabelProps={{
             style: {
-              fontSize: "0.72rem",
+              fontSize: "0.87rem",
               display: "flex",
               alignItems: "center",
             },
