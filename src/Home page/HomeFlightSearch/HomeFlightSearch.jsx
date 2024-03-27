@@ -1,3 +1,4 @@
+import FlightSearchDatePicker from "./FlightSearchDatePicker";
 import FlightSearchInput from "./FlightSearchInput";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,21 +20,9 @@ function HomeFlightSearch() {
         />
       </div>
 
-      <div className="flex flex-row justify-between">
-        <div className="flex flex-col">
-          <label htmlFor="departureTime">Departure Time</label>
-          <input id="departureTime" type="datetime-local" />
-        </div>
+      <FlightSearchDatePicker label="Departure Date" />
 
-        <div className="flex flex-col">
-          <div className="flex flex-col">
-            <label htmlFor="arrivalTime">Arrival Time</label>
-            <input id="arrivalTime" type="datetime-local" />
-          </div>
-
-          <button>one-way</button>
-        </div>
-      </div>
+      <FlightSearchDatePicker label="Arrival Date" />
 
       <div className="flex flex-row justify-between">
         <div className="flex flex-col">

@@ -25,7 +25,15 @@ export default function FlightSearchInput({ label, optionField }) {
     (async () => {
       await sleep(1000);
       if (active) {
-        setOptions([...flightsAPI]);
+        const uniqueCities = new Set(); // Using a Set to store unique cities
+        const filteredOptions = flightsAPI.filter((flight) => {
+          if (!uniqueCities.has(flight[optionField])) {
+            uniqueCities.add(flight[optionField]);
+            return true;
+          }
+          return false;
+        });
+        setOptions([...filteredOptions]);
       }
     })();
 
