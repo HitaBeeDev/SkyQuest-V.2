@@ -2,6 +2,7 @@ import { useState } from "react";
 import FlightSearchDatePicker from "./FlightSearchDatePicker";
 import FlightSearchInput from "./FlightSearchInput";
 import Switch from "@mui/material/Switch";
+import FlightSearchDetails from "./FlightSearchDetails";
 
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
@@ -76,6 +77,8 @@ function HomeFlightSearch() {
         <label htmlFor="direct">Direct Flight</label>
         <input id="direct" type="checkbox" />
       </div>
+
+      <FlightSearchDetails />
 
       <button className="text-right" type="submit">
         Search
