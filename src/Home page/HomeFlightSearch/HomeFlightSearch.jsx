@@ -72,7 +72,7 @@ function HomeFlightSearch() {
         </div>
       </div>
 
-      <div className="flex flex-row gap-5">
+      <div className="flex flex-row gap-5 items-center">
         <label htmlFor="direct">Direct Flight</label>
         <input id="direct" type="checkbox" />
       </div>
