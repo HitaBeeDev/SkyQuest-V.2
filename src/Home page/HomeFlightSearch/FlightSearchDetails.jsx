@@ -1,13 +1,10 @@
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
+// <FontAwesomeIcon icon={faArrowRightArrowLeft} />
+
+import { cabinClasses, passengerTypes } from "./passengerCabinTypes";
+
 function FlightSearchDetails() {
-  const passengerTypes = [
-    { label: "Adult", span: "12 +", count: 1 },
-    { label: "Child", span: "2 - 11", count: 0 },
-    { label: "Infant", span: "Under 2 years old", count: 0 },
-    { label: "Student", span: "12 - 34", count: 0 },
-  ];
-
-  const cabinClasses = ["ECONOMY", "BUSINESS"];
-
   return (
     <div className="flex flex-col gap-5 w-full">
       {passengerTypes.map((type, index) => (
