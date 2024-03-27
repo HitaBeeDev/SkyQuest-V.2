@@ -1,8 +1,6 @@
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
-// <FontAwesomeIcon icon={faArrowRightArrowLeft} />
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { cabinClasses, passengerTypes } from "./passengerCabinTypes";
+import { faSquareMinus, faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 
 function FlightSearchDetails() {
   return (
@@ -12,10 +10,14 @@ function FlightSearchDetails() {
           <p className="flex flex-col">
             {type.label} <span>{type.span}</span>
           </p>
-          <div className="flex flex-row justify-between gap-3">
-            <button>-</button>
+          <div className="flex flex-row items-center justify-between gap-3">
+            <button>
+              <FontAwesomeIcon icon={faSquareMinus} />
+            </button>
             <p>{type.count}</p>
-            <button>+</button>
+            <button>
+              <FontAwesomeIcon icon={faSquarePlus} />
+            </button>
           </div>
         </div>
       ))}
