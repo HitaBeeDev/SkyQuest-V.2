@@ -14,7 +14,9 @@ function FlightSearchDetails() {
             <button>
               <FontAwesomeIcon icon={faSquareMinus} />
             </button>
+
             <p>{type.count}</p>
+
             <button>
               <FontAwesomeIcon icon={faSquarePlus} />
             </button>
