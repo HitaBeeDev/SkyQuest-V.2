@@ -24,7 +24,7 @@ function HomeFlightSearch() {
   };
 
   return (
-    <form className="flex flex-col justify-between h-full p-32">
+    <form className="flex flex-col justify-between h-full p-10">
       <div className="flex flex-row items-center justify-between">
         <FlightSearchInput
           optionField="departure"
