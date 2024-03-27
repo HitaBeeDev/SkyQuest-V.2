@@ -13,8 +13,8 @@ function FlightSearchDetails() {
       <div className="flex flex-col">
         {passengerTypes.map((type, index) => (
           <div key={index} className="flex flex-row justify-between">
-            <p>
-              {type.label} <span></span>
+            <p className="flex flex-col">
+              {type.label} <span>{type.span}</span>
             </p>
             <div className="flex flex-row justify-between gap-3">
               <button>-</button>
