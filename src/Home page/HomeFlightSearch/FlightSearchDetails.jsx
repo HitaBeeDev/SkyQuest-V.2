@@ -1,40 +1,32 @@
 function FlightSearchDetails() {
+  const passengerTypes = [
+    { label: "Adult", span: "12 +", count: 1 },
+    { label: "Child", span: "2 - 11", count: 0 },
+    { label: "Infant", span: "Under 2 years old", count: 0 },
+    { label: "Student", span: "12 - 34", count: 0 },
+  ];
+
+  const cabinClasses = ["ECONOMY", "BUSINESS"];
+
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-col">
-        <div className="flex flex-row justify-between">
-          <p>Adult</p>
-
-          <div className="flex flex-row justify-between gap-3">
-            <button>-</button>
-            <p>1</p>
-            <button>+</button>
+        {passengerTypes.map((type, index) => (
+          <div key={index} className="flex flex-row justify-between">
+            <p>
+              {type.label} <span></span>
+            </p>
+            <div className="flex flex-row justify-between gap-3">
+              <button>-</button>
+              <p>{type.count}</p>
+              <button>+</button>
+            </div>
           </div>
-        </div>
-
+        ))}
         <div className="flex flex-row justify-between">
-          <p>Child</p>
-
-          <div className="flex flex-row justify-between gap-3">
-            <button>-</button>
-            <p>0</p>
-            <button>+</button>
-          </div>
-        </div>
-
-        <div className="flex flex-row justify-between">
-          <p>Infant</p>
-
-          <div className="flex flex-row justify-between gap-3">
-            <button>-</button>
-            <p>0</p>
-            <button>+</button>
-          </div>
-        </div>
-
-        <div className="flex flex-row justify-between">
-          <button>ECONOMY</button>
-          <button>BUSSINESS</button>
+          {cabinClasses.map((cabin, index) => (
+            <button key={index}>{cabin}</button>
+          ))}
         </div>
       </div>
     </div>
