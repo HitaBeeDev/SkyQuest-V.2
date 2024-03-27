@@ -10,17 +10,16 @@ import Switch from "@mui/material/Switch";
 const label = { inputProps: { "aria-label": "Size switch demo" } };
 
 function HomeFlightSearch() {
+  const [returnDateEnabled, setReturnDateEnabled] = useState(true);
   const [departureDate, setDepartureDate] = useState("");
-  const [arrivalDate, setArrivalDate] = useState("");
+  const [returnDate, setReturnDate] = useState("");
 
-  const handleDepartureDateChange = (e) => {
-    const selectedDate = e.target.value;
-    setDepartureDate(selectedDate);
+  const handleDepartureDateChange = (value) => {
+    setDepartureDate(value);
   };
 
-  const handleReturnDateChange = (e) => {
-    const selectedDate = e.target.value;
-    setArrivalDate(selectedDate);
+  const handleReturnDateChange = (value) => {
+    setReturnDate(value);
   };
 
   return (
@@ -41,21 +40,33 @@ function HomeFlightSearch() {
         <FlightSearchDatePicker
           label="Departure Date"
           handleChange={handleDepartureDateChange}
+          isSelectable={true}
         />
 
         <div className="flex flex-col items-end gap-3">
-          <FlightSearchDatePicker
-            label="Arrival Date"
-            handleChange={handleReturnDateChange}
-          />
+          {returnDateEnabled && (
+            <FlightSearchDatePicker
+              label="Arrival Date"
+              handleChange={handleReturnDateChange}
+              isSelectable={true}
+            />
+          )}
+          {!returnDateEnabled && (
+            <FlightSearchDatePicker
+              label="Arrival Date"
+              handleChange={handleReturnDateChange}
+              isSelectable={false}
+            />
+          )}
 
           <div className="flex flex-row">
             <Switch
               className="text-right"
-              {...label}
-              defaultChecked
+              defaultChecked={returnDateEnabled}
               size="small"
+              onChange={() => setReturnDateEnabled(!returnDateEnabled)}
             />
+
             <p>Round Trip</p>
           </div>
         </div>
@@ -68,9 +79,8 @@ function HomeFlightSearch() {
             <input id="direct" type="checkbox" />
           </div>
 
-          <div>modal</div>
+          <div></div>
         </div>
-
         <button type="submit">Search</button>
       </div>
     </form>
