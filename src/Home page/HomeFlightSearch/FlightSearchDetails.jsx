@@ -1,33 +1,44 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import PassengerCounter from "./PassengerCounter";
 import { cabinClasses, passengerTypes } from "./passengerCabinTypes";
-import { faSquareMinus, faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 
 function FlightSearchDetails() {
+  const [passengerCounts, setPassengerCounts] = useState([
+    { ...passengerTypes[0], count: 1 },
+    { ...passengerTypes[1], count: 0 },
+    { ...passengerTypes[2], count: 0 },
+    { ...passengerTypes[3], count: 0 },
+  ]);
+
+  const handleIncrease = (index) => {
+    const updatedCounts = [...passengerCounts];
+    updatedCounts[index].count += 1;
+    setPassengerCounts(updatedCounts);
+  };
+
+  const handleDecrease = (index) => {
+    const updatedCounts = [...passengerCounts];
+    updatedCounts[index].count = Math.max(0, updatedCounts[index].count - 1);
+    setPassengerCounts(updatedCounts);
+  };
+
   return (
-    <div className="flex flex-col gap-5 w-full">
-      {passengerTypes.map((type, index) => (
-        <div key={index} className="flex flex-row justify-between">
-          <p className="flex flex-col">
-            {type.label} <span>{type.span}</span>
-          </p>
-          <div className="flex flex-row items-center justify-between gap-3">
-            <button>
-              <FontAwesomeIcon icon={faSquareMinus} />
-            </button>
-
-            <p>{type.count}</p>
-
-            <button>
-              <FontAwesomeIcon icon={faSquarePlus} />
-            </button>
-          </div>
-        </div>
-      ))}
-
-      <div className="flex flex-row justify-between">
-        {cabinClasses.map((cabin, index) => (
-          <button key={index}>{cabin}</button>
+    <div className="flex flex-col w-full">
+      <div className="flex flex-col">
+        {passengerCounts.map((passenger, index) => (
+          <PassengerCounter
+            key={passenger.label}
+            type={passenger}
+            count={passenger.count}
+            onIncrease={() => handleIncrease(index)}
+            onDecrease={() => handleDecrease(index)}
+          />
         ))}
+        <div className="flex flex-row justify-between">
+          {cabinClasses.map((cabinClass) => (
+            <button key={cabinClass}>{cabinClass}</button>
+          ))}
+        </div>
       </div>
     </div>
   );
