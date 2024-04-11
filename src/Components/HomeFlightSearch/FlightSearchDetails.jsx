@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PassengerCounter from "./PassengerCounter";
-import { cabinClasses, passengerTypes } from "./passengerCabinTypes";
+import { cabinClasses, passengerTypes } from "../../Data/passengerCabinTypes";
 
 function FlightSearchDetails() {
   const [passengerCounts, setPassengerCounts] = useState([

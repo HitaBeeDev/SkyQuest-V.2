@@ -1,4 +1,4 @@
-import HomePage from "./Home page/HomePage";
+import HomePage from "./HomePage";
 
 function Container() {
   return (
