@@ -18,8 +18,10 @@ function FlightSearchDetails() {
 
   const handleDecrease = (index) => {
     const updatedCounts = [...passengerCounts];
-    updatedCounts[index].count = Math.max(0, updatedCounts[index].count - 1);
-    setPassengerCounts(updatedCounts);
+    if (updatedCounts[index].count > 1) {
+      updatedCounts[index].count -= 1;
+      setPassengerCounts(updatedCounts);
+    }
   };
 
   return (
