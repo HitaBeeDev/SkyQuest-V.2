@@ -36,7 +36,8 @@ function FlightSearchDetails() {
             onDecrease={() => handleDecrease(index)}
           />
         ))}
-        <div className="flex flex-row justify-between">
+
+        <div className="flex flex-row justify-end gap-5">
           {cabinClasses.map((cabinClass) => (
             <button key={cabinClass}>{cabinClass}</button>
           ))}
