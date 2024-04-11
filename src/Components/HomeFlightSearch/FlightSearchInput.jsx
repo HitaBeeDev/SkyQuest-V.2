@@ -2,7 +2,7 @@ import { useEffect, useState, Fragment } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import CircularProgress from "@mui/material/CircularProgress";
-import flightsAPI from "../../flightsAPI";
+import flightsAPI from "../../Data/flightsAPI";
 
 function sleep(duration) {
   return new Promise((resolve) => {
