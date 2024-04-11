@@ -75,8 +75,6 @@ function HomeFlightSearch() {
       <button className="text-right" type="submit">
         Search
       </button>
-
-      <ResultPage />
     </form>
   );
 }
