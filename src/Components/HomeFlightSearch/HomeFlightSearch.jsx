@@ -3,10 +3,7 @@ import FlightSearchDatePicker from "./FlightSearchDatePicker";
 import FlightSearchInput from "./FlightSearchInput";
 import Switch from "@mui/material/Switch";
 import FlightSearchDetails from "./FlightSearchDetails";
-
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faArrowRightArrowLeft } from "@fortawesome/free-solid-svg-icons";
-// <FontAwesomeIcon icon={faArrowRightArrowLeft} />
+import ResultPage from "../ResultPage/ResultPage";
 
 const label = { inputProps: { "aria-label": "Size switch demo" } };
 
@@ -78,6 +75,8 @@ function HomeFlightSearch() {
       <button className="text-right" type="submit">
         Search
       </button>
+
+      <ResultPage />
     </form>
   );
 }
