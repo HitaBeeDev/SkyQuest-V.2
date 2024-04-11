@@ -4,13 +4,13 @@ import { faSquareMinus, faSquarePlus } from "@fortawesome/free-solid-svg-icons";
 function PassengerCounter({ type, count, onIncrease, onDecrease }) {
   return (
     <div className="flex flex-row justify-between">
-      <div>
+      <div className="flex flex-col gap-2">
         <p>{type.label}</p>
 
-        <p>{type.span}</p>
+        <p className="text-xs">{type.span}</p>
       </div>
 
-      <div className="flex flex-row justify-between gap-3">
+      <div className="flex flex-row justify-between items-center gap-3">
         <button type="button" onClick={onDecrease}>
           <FontAwesomeIcon icon={faSquareMinus} />
         </button>

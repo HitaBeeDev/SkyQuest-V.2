@@ -26,7 +26,7 @@ function FlightSearchDetails() {
 
   return (
     <div className="flex flex-col w-full">
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-3">
         {passengerCounts.map((passenger, index) => (
           <PassengerCounter
             key={passenger.label}
