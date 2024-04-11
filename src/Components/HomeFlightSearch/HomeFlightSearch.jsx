@@ -3,14 +3,17 @@ import FlightSearchDatePicker from "./FlightSearchDatePicker";
 import FlightSearchInput from "./FlightSearchInput";
 import Switch from "@mui/material/Switch";
 import FlightSearchDetails from "./FlightSearchDetails";
-import ResultPage from "../ResultPage/ResultPage";
 
-const label = { inputProps: { "aria-label": "Size switch demo" } };
-
-function HomeFlightSearch() {
+function HomeFlightSearch({ onSearch }) {
+  // Accept onSearch prop
   const [returnDateEnabled, setReturnDateEnabled] = useState(true);
   const [departureDate, setDepartureDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSearch();
+  };
 
   const handleDepartureDateChange = (value) => {
     setDepartureDate(value);
@@ -21,7 +24,10 @@ function HomeFlightSearch() {
   };
 
   return (
-    <form className="flex flex-col justify-between h-full p-10">
+    <form
+      className="flex flex-col justify-between h-full p-10"
+      onSubmit={handleSubmit}
+    >
       <div className="flex flex-row items-center justify-between">
         <FlightSearchInput
           optionField="departure"
