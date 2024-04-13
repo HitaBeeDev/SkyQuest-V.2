@@ -5,9 +5,11 @@ import ResultPage from "./ResultPage/ResultPage";
 
 function Container() {
   const [searchInitiated, setSearchInitiated] = useState(false);
+  const [searchData, setSearchData] = useState(null);
 
-  const handleSearch = () => {
+  const handleSearch = (data) => {
     setSearchInitiated(true);
+    setSearchData(data);
   };
 
   return (
@@ -23,8 +25,7 @@ function Container() {
           </div>
         </div>
       )}
-
-      {searchInitiated && <ResultPage />}
+      {searchInitiated && <ResultPage searchData={searchData} />}
     </div>
   );
 }

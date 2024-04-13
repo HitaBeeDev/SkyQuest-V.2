@@ -1,17 +1,23 @@
-function ResultPage() {
+function ResultPage({ searchData }) {
+  if (!searchData) return null;
+
+  const {
+    departure,
+    arrival,
+    departureDate,
+    arrivalDate,
+    passengerCounts,
+    cabinClass,
+  } = searchData;
+
   return (
     <div className="bg-red-400">
-      <p>DEPARTURE</p>
-
-      <p>arrival</p>
-
-      <p>DEPARTURE date</p>
-
-      <p>arrival date</p>
-
-      <p>passanger type counts</p>
-
-      <p>passanger class</p>
+      <p>DEPARTURE: {departure}</p>
+      <p>ARRIVAL: {arrival}</p>
+      <p>DEPARTURE DATE: {departureDate}</p>
+      <p>ARRIVAL DATE: {arrivalDate}</p>
+      <p>PASSENGER TYPE COUNTS: {JSON.stringify(passengerCounts)}</p>
+      <p>PASSENGER CLASS: {cabinClass}</p>
     </div>
   );
 }
