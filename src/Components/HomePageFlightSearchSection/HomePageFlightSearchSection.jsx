@@ -1,5 +1,11 @@
+import DepartureArrivalInputs from "./DepartureArrivalInputs";
+
 function HomePageFlightSearchSection() {
-  return <div></div>;
+  return (
+    <div>
+      <DepartureArrivalInputs />
+    </div>
+  );
 }
 
 export default HomePageFlightSearchSection;
