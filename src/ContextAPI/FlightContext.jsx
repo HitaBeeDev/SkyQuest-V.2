@@ -5,7 +5,7 @@ const FlightContext = createContext();
 export const useFlights = () => useContext(FlightContext);
 
 export const FlightProvider = ({ children }) => {
-  const cities = [
+  const initialCities = [
     { name: "New York City" },
     { name: "Tokyo" },
     { name: "London" },
@@ -13,35 +13,62 @@ export const FlightProvider = ({ children }) => {
     { name: "Sydney" },
   ];
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredCities, setFilteredCities] = useState([]);
+  const [searchDeparture, setSearchDeparture] = useState("");
+  const [searchArrival, setSearchArrival] = useState("");
+  const [filteredDepartureCities, setFilteredDepartureCities] = useState([]);
+  const [filteredArrivalCities, setFilteredArrivalCities] = useState([]);
 
-  const handleInputChange = (event) => {
+  const handleDepartureInputChange = (event) => {
     const value = event.target.value;
-    setSearchTerm(value);
-    const filteredCities = cities.filter((city) =>
+    setSearchDeparture(value);
+    const filteredCities = initialCities.filter((city) =>
       city.name.toLowerCase().includes(value.toLowerCase())
     );
-    setFilteredCities(filteredCities);
+    setFilteredDepartureCities(filteredCities);
   };
 
-  const handleInputFocus = () => {
-    setFilteredCities(cities);
+  const handleArrivalInputChange = (event) => {
+    const value = event.target.value;
+    setSearchArrival(value);
+    const filteredCities = initialCities.filter((city) =>
+      city.name.toLowerCase().includes(value.toLowerCase())
+    );
+    setFilteredArrivalCities(filteredCities);
   };
 
-  const handleCitySelect = (cityName) => {
-    setSearchTerm(cityName);
-    setFilteredCities([]);
+  const handleDepartureInputFocus = () => {
+    setFilteredDepartureCities(initialCities);
+  };
+
+  const handleArrivalInputFocus = () => {
+    setFilteredArrivalCities(initialCities);
+  };
+
+  const handleDepartureCitySelect = (cityName) => {
+    setSearchDeparture(cityName);
+    setFilteredDepartureCities([]);
+  };
+
+  const handleCitySelectArrival = (cityName) => {
+    setSearchArrival(cityName);
+    setFilteredArrivalCities([]);
   };
 
   return (
     <FlightContext.Provider
       value={{
-        searchTerm,
-        filteredCities,
-        handleInputChange,
-        handleInputFocus,
-        handleCitySelect,
+        setSearchDeparture,
+        searchArrival,
+        filteredDepartureCities,
+        filteredArrivalCities,
+        handleDepartureInputFocus,
+        handleArrivalInputFocus,
+        handleDepartureCitySelect,
+        setFilteredDepartureCities,
+        handleCitySelectArrival,
+        handleArrivalInputChange,
+        handleDepartureInputChange,
+        searchDeparture,
       }}
     >
       {children}
