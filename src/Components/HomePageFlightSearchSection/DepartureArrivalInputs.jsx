@@ -25,6 +25,11 @@ function DepartureArrivalInputs() {
     setFilteredCities(cities);
   };
 
+  const handleCitySelect = (cityName) => {
+    setSearchTerm(cityName);
+    setFilteredCities([]);
+  };
+
   return (
     <div>
       <input
@@ -36,7 +41,9 @@ function DepartureArrivalInputs() {
       />
       <ul>
         {filteredCities.map((city, index) => (
-          <li key={index}>{city.name}</li>
+          <li key={index} onClick={() => handleCitySelect(city.name)}>
+            {city.name}
+          </li>
         ))}
       </ul>
     </div>
