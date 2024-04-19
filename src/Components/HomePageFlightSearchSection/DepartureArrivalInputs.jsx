@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useState } from "react";
 
 function DepartureArrivalInputs() {
@@ -12,10 +11,23 @@ function DepartureArrivalInputs() {
     { title: "Pulp Fiction", year: 1994 },
   ];
 
+  // State variables
   const [open, setOpen] = useState(false);
   const [options, setOptions] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [inputValue, setInputValue] = useState("");
+
+  // Handler for input change
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setInputValue(value);
+    setOpen(!!value); // Open dropdown if there's text input
+  };
+
+  // Handler for selecting an option
+  const handleOptionSelect = (option) => {
+    setInputValue(option.title);
+    setOpen(false);
+  };
 
   return (
     <div>
@@ -23,24 +35,13 @@ function DepartureArrivalInputs() {
         type="text"
         placeholder="Search movies..."
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onFocus={() => setOpen(true)}
+        onChange={handleInputChange}
       />
-      {loading && (
-        <div>
-          <div></div>
-        </div>
-      )}
+
       {open && (
         <div>
           {options.map((option, index) => (
-            <div
-              key={index}
-              onClick={() => {
-                setInputValue(option.title);
-                setOpen(false);
-              }}
-            >
+            <div key={index} onClick={() => handleOptionSelect(option)}>
               {option.title}
             </div>
           ))}
