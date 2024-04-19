@@ -1,6 +1,6 @@
 import { useFlights } from "../../ContextAPI/FlightContext";
 
-function SearchInputs() {
+function SearchInputs({ placeholder }) {
   const {
     searchTerm,
     filteredCities,
@@ -13,7 +13,7 @@ function SearchInputs() {
     <div>
       <input
         type="text"
-        placeholder="Search cities..."
+        placeholder={placeholder}
         value={searchTerm}
         onChange={handleInputChange}
         onFocus={handleInputFocus}
