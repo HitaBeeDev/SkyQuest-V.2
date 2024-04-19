@@ -1,7 +1,11 @@
 import SearchInputs from "./SearchInputs";
 
 function HomePageFlightSearchSection() {
-  return <SearchInputs />;
+  return (
+    <div>
+      <SearchInputs />
+    </div>
+  );
 }
 
 export default HomePageFlightSearchSection;
