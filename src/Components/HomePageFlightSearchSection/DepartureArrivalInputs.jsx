@@ -1,39 +1,13 @@
 import { useState } from "react";
 
 function DepartureArrivalInputs() {
-  const topFilms = [
-    { title: "The Shawshank Redemption", year: 1994 },
-    { title: "The Godfather", year: 1972 },
-    { title: "The Godfather: Part II", year: 1974 },
-    { title: "The Dark Knight", year: 2008 },
-    { title: "12 Angry Men", year: 1957 },
-    { title: "Schindler's List", year: 1993 },
-    { title: "Pulp Fiction", year: 1994 },
+  const cities = [
+    { name: "New York City" },
+    { name: "Tokyo" },
+    { name: "London" },
+    { name: "Paris" },
+    { name: "Sydney" },
   ];
-
-  // State variables
-  const [open, setOpen] = useState(false);
-  const [options, setOptions] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-
-  // Handler for input change
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setInputValue(value);
-    setOpen(!!value); // Open dropdown if there's text input
-
-    // Filter options based on input value
-    const filteredOptions = topFilms.filter(
-      (film) => film.title.toLowerCase().includes(value.toLowerCase()) // Case insensitive search
-    );
-    setOptions(filteredOptions);
-  };
-
-  // Handler for selecting an option
-  const handleOptionSelect = (option) => {
-    setInputValue(option.title);
-    setOpen(false);
-  };
 
   return (
     <div>
