@@ -21,6 +21,12 @@ function DepartureArrivalInputs() {
     const value = e.target.value;
     setInputValue(value);
     setOpen(!!value); // Open dropdown if there's text input
+
+    // Filter options based on input value
+    const filteredOptions = topFilms.filter(
+      (film) => film.title.toLowerCase().includes(value.toLowerCase()) // Case insensitive search
+    );
+    setOptions(filteredOptions);
   };
 
   // Handler for selecting an option
