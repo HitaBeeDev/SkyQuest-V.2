@@ -1,9 +1,12 @@
 import Container from "./Components/Container";
+import { FlightProvider } from "./ContextAPI/FlightContext";
 
 function App() {
   return (
     <div>
-      <Container />
+      <FlightProvider>
+        <Container />
+      </FlightProvider>
     </div>
   );
 }

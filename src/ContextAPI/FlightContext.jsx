@@ -1,6 +1,10 @@
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-function DepartureArrivalInputs() {
+const FlightContext = createContext();
+
+export const useFlights = () => useContext(FlightContext);
+
+export const FlightProvider = ({ children }) => {
   const cities = [
     { name: "New York City" },
     { name: "Tokyo" },
@@ -31,23 +35,18 @@ function DepartureArrivalInputs() {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search cities..."
-        value={searchTerm}
-        onChange={handleInputChange}
-        onFocus={handleInputFocus}
-      />
-      <ul>
-        {filteredCities.map((city, index) => (
-          <li key={index} onClick={() => handleCitySelect(city.name)}>
-            {city.name}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <FlightContext.Provider
+      value={{
+        searchTerm,
+        filteredCities,
+        handleInputChange,
+        handleInputFocus,
+        handleCitySelect,
+      }}
+    >
+      {children}
+    </FlightContext.Provider>
   );
-}
+};
 
-export default DepartureArrivalInputs;
+export default FlightContext;
