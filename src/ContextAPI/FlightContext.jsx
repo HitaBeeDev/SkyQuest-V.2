@@ -103,6 +103,7 @@ export const FlightProvider = ({ children }) => {
         handleReturnDateChange,
         returnDate,
         handleSwitchChange,
+        currentDate,
       }}
     >
       {children}
