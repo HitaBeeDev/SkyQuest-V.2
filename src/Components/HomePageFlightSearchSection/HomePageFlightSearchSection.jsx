@@ -3,7 +3,7 @@ import ArrivalSearchInput from "../SearchInputs/ArrivalSearchInputs";
 import DepartureSearchInput from "../SearchInputs/DepartureSearchInputs";
 import { useFlights } from "../../ContextAPI/FlightContext";
 import DepartureDateInput from "../DateInputs/DepartureDateInput";
-import ArrivalDateInput from "../DateInputs/ArrivalDateInput";
+import ReturnDateInput from "../DateInputs/ReturnDateInput";
 import SwitchComponent from "../DateInputs/SwitchComponent";
 
 function HomePageFlightSearchSection() {
@@ -25,7 +25,7 @@ function HomePageFlightSearchSection() {
       <div>
         <div className="flex flex-row">
           <DepartureDateInput />
-          <ArrivalDateInput />
+          <ReturnDateInput />
         </div>
 
         <SwitchComponent />

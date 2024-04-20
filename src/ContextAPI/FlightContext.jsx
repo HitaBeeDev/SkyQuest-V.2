@@ -18,6 +18,10 @@ export const FlightProvider = ({ children }) => {
   const [switchOn, setSwitchOn] = useState(true);
   const [returnDate, setReturnDate] = useState("");
 
+  const handleSwitchChange = (event) => {
+    setSwitchOn(event.target.checked);
+  };
+
   const handleReturnDateChange = (event) => {
     setReturnDate(event.target.value);
   };
@@ -96,6 +100,7 @@ export const FlightProvider = ({ children }) => {
         setSwitchOn,
         handleReturnDateChange,
         returnDate,
+        handleSwitchChange,
       }}
     >
       {children}
