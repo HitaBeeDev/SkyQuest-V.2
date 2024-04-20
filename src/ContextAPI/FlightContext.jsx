@@ -7,11 +7,11 @@ const FlightContext = createContext();
 export const useFlights = () => useContext(FlightContext);
 
 export const FlightProvider = ({ children }) => {
-  const [searchDeparture, setSearchDeparture] = useState("");
-  const [searchArrival, setSearchArrival] = useState("");
+  const [searchDepartureCity, setSearchDepartureCity] = useState("");
+  const [searchArrivalCity, setSearchArrivalCity] = useState("");
   const [filteredDepartureCities, setFilteredDepartureCities] = useState([]);
   const [filteredArrivalCities, setFilteredArrivalCities] = useState([]);
-  const [selectedDeparture, setSelectedDeparture] = useState("");
+  const [selectedDepartureCity, setSelectedDepartureCity] = useState("");
   const [selectedArrival, setSelectedArrival] = useState("");
   const [searchedFlights, setSearchedFlights] = useState([]);
   const [searched, setSearched] = useState(false);
@@ -32,7 +32,7 @@ export const FlightProvider = ({ children }) => {
     const filteredFlights = flights.filter(
       (flight) =>
         flight.departureCity.trim().toLowerCase() ===
-          selectedDeparture.trim().toLowerCase() &&
+          selectedDepartureCity.trim().toLowerCase() &&
         flight.arrivalCity.trim().toLowerCase() ===
           selectedArrival.trim().toLowerCase()
     );
@@ -42,7 +42,7 @@ export const FlightProvider = ({ children }) => {
 
   const handleDepartureInputChange = (event) => {
     const value = event.target.value;
-    setSearchDeparture(value);
+    setSearchDepartureCity(value);
     const filteredCities = initialCities.filter((city) =>
       city.name.toLowerCase().includes(value.toLowerCase())
     );
@@ -51,7 +51,7 @@ export const FlightProvider = ({ children }) => {
 
   const handleArrivalInputChange = (event) => {
     const value = event.target.value;
-    setSearchArrival(value);
+    searchArrivalCity(value);
     const filteredCities = initialCities.filter((city) =>
       city.name.toLowerCase().includes(value.toLowerCase())
     );
@@ -67,24 +67,24 @@ export const FlightProvider = ({ children }) => {
   };
 
   const handleDepartureCitySelect = (cityName) => {
-    setSelectedDeparture(cityName);
-    setSearchDeparture(cityName);
+    setSelectedDepartureCity(cityName);
+    setSearchDepartureCity(cityName);
     setFilteredDepartureCities([]);
   };
 
   const handleArrivalCitySelect = (cityName) => {
     setSelectedArrival(cityName);
-    setSearchArrival(cityName);
+    setSearchArrivalCity(cityName);
     setFilteredArrivalCities([]);
   };
 
   return (
     <FlightContext.Provider
       value={{
-        setSearchDeparture,
-        setSearchArrival,
-        searchDeparture,
-        searchArrival,
+        setSearchDepartureCity,
+        setSearchArrivalCity,
+        searchDepartureCity,
+        searchArrivalCity,
         filteredDepartureCities,
         filteredArrivalCities,
         handleDepartureInputFocus,
@@ -93,7 +93,7 @@ export const FlightProvider = ({ children }) => {
         handleArrivalCitySelect,
         handleDepartureInputChange,
         handleArrivalInputChange,
-        setSelectedDeparture,
+        setSelectedDepartureCity,
         setSelectedArrival,
         searchedFlights,
         handleSearch,
