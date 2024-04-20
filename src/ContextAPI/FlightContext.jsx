@@ -1,22 +1,32 @@
 import { createContext, useContext, useState } from "react";
+import initialCities from "../Data/cities";
+import flights from "../Data/flights";
 
 const FlightContext = createContext();
 
 export const useFlights = () => useContext(FlightContext);
 
 export const FlightProvider = ({ children }) => {
-  const initialCities = [
-    { name: "New York City" },
-    { name: "Tokyo" },
-    { name: "London" },
-    { name: "Paris" },
-    { name: "Sydney" },
-  ];
-
   const [searchDeparture, setSearchDeparture] = useState("");
   const [searchArrival, setSearchArrival] = useState("");
   const [filteredDepartureCities, setFilteredDepartureCities] = useState([]);
   const [filteredArrivalCities, setFilteredArrivalCities] = useState([]);
+  const [selectedDeparture, setSelectedDeparture] = useState("");
+  const [selectedArrival, setSelectedArrival] = useState("");
+  const [searchedFlights, setSearchedFlights] = useState([]);
+  const [searched, setSearched] = useState(false);
+
+  const handleSearch = () => {
+    const filteredFlights = flights.filter(
+      (flight) =>
+        flight.departureCity.trim().toLowerCase() ===
+          selectedDeparture.trim().toLowerCase() &&
+        flight.arrivalCity.trim().toLowerCase() ===
+          selectedArrival.trim().toLowerCase()
+    );
+    setSearchedFlights(filteredFlights);
+    setSearched(true);
+  };
 
   const handleDepartureInputChange = (event) => {
     const value = event.target.value;
@@ -45,11 +55,13 @@ export const FlightProvider = ({ children }) => {
   };
 
   const handleDepartureCitySelect = (cityName) => {
+    setSelectedDeparture(cityName);
     setSearchDeparture(cityName);
     setFilteredDepartureCities([]);
   };
 
-  const handleCitySelectArrival = (cityName) => {
+  const handleArrivalCitySelect = (cityName) => {
+    setSelectedArrival(cityName);
     setSearchArrival(cityName);
     setFilteredArrivalCities([]);
   };
@@ -58,17 +70,22 @@ export const FlightProvider = ({ children }) => {
     <FlightContext.Provider
       value={{
         setSearchDeparture,
+        setSearchArrival,
+        searchDeparture,
         searchArrival,
         filteredDepartureCities,
         filteredArrivalCities,
         handleDepartureInputFocus,
         handleArrivalInputFocus,
         handleDepartureCitySelect,
-        setFilteredDepartureCities,
-        handleCitySelectArrival,
-        handleArrivalInputChange,
+        handleArrivalCitySelect,
         handleDepartureInputChange,
-        searchDeparture,
+        handleArrivalInputChange,
+        setSelectedDeparture,
+        setSelectedArrival,
+        searchedFlights,
+        handleSearch,
+        searched,
       }}
     >
       {children}

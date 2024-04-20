@@ -1,28 +1,33 @@
 import { useFlights } from "../../ContextAPI/FlightContext";
 
-function SearchInputs({ placeholder }) {
+function DepartureSearchInput() {
   const {
     searchDeparture,
     filteredDepartureCities,
-    handleDepartureInputChange,
     handleDepartureInputFocus,
     handleDepartureCitySelect,
+    handleDepartureInputChange,
   } = useFlights();
 
   return (
     <div>
       <input
         type="text"
-        placeholder={placeholder}
+        placeholder="Put your Departure City"
         value={searchDeparture}
         onChange={handleDepartureInputChange}
-        onFocus={handleDepartureInputFocus}
+        onFocus={() => {
+          handleDepartureInputFocus();
+        }}
       />
+
       <ul>
         {filteredDepartureCities.map((city) => (
           <li
             key={city.name}
-            onClick={() => handleDepartureCitySelect(city.name)}
+            onClick={() => {
+              handleDepartureCitySelect(city.name);
+            }}
           >
             {city.name}
           </li>
@@ -32,4 +37,4 @@ function SearchInputs({ placeholder }) {
   );
 }
 
-export default SearchInputs;
+export default DepartureSearchInput;
