@@ -19,7 +19,7 @@ const label = { inputProps: { "aria-label": "Color switch demo" } };
 function SwitchComponent() {
   return (
     <div>
-      <Switch {...label} defaultChecked />
+      <Switch {...label} defaultChecked color="secondary" />
     </div>
   );
 }
