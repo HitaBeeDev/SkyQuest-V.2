@@ -8,8 +8,8 @@ import SwitchComponent from "../DateInputs/SwitchComponent";
 
 function HomePageFlightSearchSection() {
   const {
-    setSelectedDeparture,
-    setSelectedArrival,
+    setSelectedDepartureCity,
+    setSelectedArrivalCity,
     searchedFlights,
     handleSearch,
     searched,
@@ -18,8 +18,8 @@ function HomePageFlightSearchSection() {
   return (
     <div>
       <div className="flex flex-row">
-        <DepartureSearchInput setSelectedDeparture={setSelectedDeparture} />
-        <ArrivalSearchInput setSelectedArrival={setSelectedArrival} />
+        <DepartureSearchInput setSelectedDeparture={setSelectedDepartureCity} />
+        <ArrivalSearchInput setSelectedArrival={setSelectedArrivalCity} />
       </div>
 
       <div>
