@@ -15,6 +15,12 @@ export const FlightProvider = ({ children }) => {
   const [selectedArrival, setSelectedArrival] = useState("");
   const [searchedFlights, setSearchedFlights] = useState([]);
   const [searched, setSearched] = useState(false);
+  const [switchOn, setSwitchOn] = useState(true);
+  const [returnDate, setReturnDate] = useState("");
+
+  const handleReturnDateChange = (event) => {
+    setReturnDate(event.target.value);
+  };
 
   const handleSearch = () => {
     const filteredFlights = flights.filter(
@@ -86,6 +92,10 @@ export const FlightProvider = ({ children }) => {
         searchedFlights,
         handleSearch,
         searched,
+        switchOn,
+        setSwitchOn,
+        handleReturnDateChange,
+        returnDate,
       }}
     >
       {children}

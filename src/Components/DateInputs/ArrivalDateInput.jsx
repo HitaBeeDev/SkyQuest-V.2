@@ -1,8 +1,8 @@
 function ArrivalDateInput() {
   return (
     <div>
-      <label htmlFor="departureDate">Arrival Date</label>
-      <input type="date" id="departureDate" placeholder="From" />
+      <label>Return Date:</label>
+      <input type="date" placeholder="From" />
     </div>
   );
 }
