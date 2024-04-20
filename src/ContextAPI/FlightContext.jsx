@@ -18,6 +18,8 @@ export const FlightProvider = ({ children }) => {
   const [switchOn, setSwitchOn] = useState(true);
   const [returnDate, setReturnDate] = useState("");
 
+  const currentDate = new Date().toISOString().split("T")[0];
+
   const handleSwitchChange = (event) => {
     setSwitchOn(event.target.checked);
   };
