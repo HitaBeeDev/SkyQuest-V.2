@@ -13,8 +13,8 @@ function DepartureDateInput() {
       </div>
 
       <input
+        className="h-9 text-xs pl-4 rounded-md w-1/2"
         type="date"
-        placeholder="From"
         value={departureDate}
         onChange={handleDepartureDateChange}
       />
