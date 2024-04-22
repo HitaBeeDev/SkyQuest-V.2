@@ -1,12 +1,17 @@
 import { useFlights } from "../../ContextAPI/FlightContext";
 
 function DepartureDateInput() {
-  const { currentDate } = useFlights();
+  const { handleDepartureDateChange, departureDate } = useFlights();
 
   return (
     <div>
-      <label>Departure Date</label>
-      <input type="date" placeholder="From" min={currentDate} />
+      <label>Departure Date:</label>
+      <input
+        type="date"
+        placeholder="From"
+        value={departureDate}
+        onChange={handleDepartureDateChange}
+      />
     </div>
   );
 }

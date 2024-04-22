@@ -1,7 +1,7 @@
 import { useFlights } from "../../ContextAPI/FlightContext";
 
 function ReturnDateInput() {
-  const { switchOn, handleReturnDateChange, returnDate, currentDate } =
+  const { switchOn, handleReturnDateChange, returnDate, departureDate } =
     useFlights();
 
   return (
@@ -12,8 +12,8 @@ function ReturnDateInput() {
         placeholder="From"
         value={returnDate}
         onChange={handleReturnDateChange}
+        min={departureDate}
         disabled={!switchOn}
-        min={currentDate}
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import initialCities from "../Data/cities";
 import flights from "../Data/flights";
 
@@ -17,15 +17,103 @@ export const FlightProvider = ({ children }) => {
   const [searched, setSearched] = useState(false);
   const [switchOn, setSwitchOn] = useState(true);
   const [returnDate, setReturnDate] = useState("");
+  const [departureDate, setDepartureDate] = useState("");
+  const [counts, setCounts] = useState({
+    adult: 1,
+    baby: 0,
+    infant: 0,
+  });
+  const [selectedClass, setSelectedClass] = useState("economy");
+  const [departureListisOpen, setDepartureListIsOpen] = useState(false);
+  const [arrivalListisOpen, setArrivalListIsOpen] = useState(false);
+  const arrivalListRef = useRef(null);
+  const departureListRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        departureListRef.current &&
+        !departureListRef.current.contains(event.target)
+      ) {
+        setDepartureListIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        arrivalListRef.current &&
+        !arrivalListRef.current.contains(event.target)
+      ) {
+        setArrivalListIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const handleClassChange = (classType) => {
+    setSelectedClass(classType);
+  };
+
+  const calculateTotalPrice = (flight) => {
+    let multiplier = 1;
+    if (selectedClass === "business") {
+      multiplier = 2;
+    } else if (selectedClass === "firstClass") {
+      multiplier = 5;
+    }
+
+    const adultPrice = counts.adult * flight.flightPrice * multiplier;
+    const babyPrice = counts.baby * (flight.flightPrice / 2) * multiplier;
+    const infantPrice = counts.infant * (flight.flightPrice / 3) * multiplier;
+    const totalPrice = adultPrice + babyPrice + infantPrice;
+    return Math.ceil(totalPrice);
+  };
+
+  const handleCountChange = (type, action) => {
+    setCounts((prevCounts) => {
+      const updatedCounts = { ...prevCounts };
+      if (action === "increase") {
+        updatedCounts[type] += 1;
+      } else if (
+        action === "decrease" &&
+        updatedCounts[type] > (type === "adult" ? 1 : 0)
+      ) {
+        updatedCounts[type] -= 1;
+      }
+      return updatedCounts;
+    });
+  };
+
+  const handleReturnDateChange = (e) => {
+    const selectedReturnDate = e.target.value;
+    if (!departureDate) {
+      setReturnDate(selectedReturnDate);
+    } else if (selectedReturnDate >= departureDate) {
+      setReturnDate(selectedReturnDate);
+    } else {
+      alert("Return date cannot be before departure date.");
+    }
+  };
+
+  const handleDepartureDateChange = (e) => {
+    setDepartureDate(e.target.value);
+  };
 
   const currentDate = new Date().toISOString().split("T")[0];
 
   const handleSwitchChange = (event) => {
     setSwitchOn(event.target.checked);
-  };
-
-  const handleReturnDateChange = (event) => {
-    setReturnDate(event.target.value);
   };
 
   const handleSearch = () => {
@@ -104,6 +192,19 @@ export const FlightProvider = ({ children }) => {
         returnDate,
         handleSwitchChange,
         currentDate,
+        handleDepartureDateChange,
+        departureDate,
+        counts,
+        handleCountChange,
+        calculateTotalPrice,
+        setSelectedClass,
+        handleClassChange,
+        departureListisOpen,
+        setDepartureListIsOpen,
+        departureListRef,
+        arrivalListisOpen,
+        setArrivalListIsOpen,
+        arrivalListRef,
       }}
     >
       {children}
