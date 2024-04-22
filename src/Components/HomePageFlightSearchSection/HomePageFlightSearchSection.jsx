@@ -31,7 +31,7 @@ function HomePageFlightSearchSection() {
           <ArrivalSearchInput setSelectedArrival={setSelectedArrivalCity} />
         </div>
 
-        <div className="flex flex-row w-full">
+        <div className="flex flex-col w-full">
           <DepartureDateInput />
           <ReturnDateInput />
         </div>
