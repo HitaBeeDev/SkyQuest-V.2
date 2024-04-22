@@ -19,9 +19,7 @@ function DepartureSearchInput() {
       <div className="flex flex-row justify-between items-center">
         <div className="w-1/2 flex flex-row justify-start items-center gap-2">
           <FontAwesomeIcon icon={faPlaneDeparture} className="text-xs" />
-          <label className="text-sm font-normal">
-            Let's Start with Your Departure Point:
-          </label>
+          <label className="text-sm font-normal">Your Departure Point:</label>
         </div>
 
         <input
