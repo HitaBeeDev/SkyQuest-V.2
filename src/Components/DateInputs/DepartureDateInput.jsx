@@ -4,8 +4,8 @@ function DepartureDateInput() {
   const { handleDepartureDateChange, departureDate } = useFlights();
 
   return (
-    <div>
-      <label>Departure Date:</label>
+    <div className="flex flex-row justify-between">
+      <label className="text-sm font-normal">Departure Date:</label>
       <input
         type="date"
         placeholder="From"
