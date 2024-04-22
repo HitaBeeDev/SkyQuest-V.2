@@ -5,8 +5,12 @@ function ReturnDateInput() {
     useFlights();
 
   return (
-    <div>
-      <label>Return Date:</label>
+    <div className="flex flex-row justify-between">
+      <div className="w-1/2 flex flex-row justify-start items-center gap-2">
+        <FontAwesomeIcon icon={faCalendar} className="text-xs" />
+        <label className="text-sm font-normal">Departure Date:</label>
+      </div>
+
       <input
         type="date"
         placeholder="From"
