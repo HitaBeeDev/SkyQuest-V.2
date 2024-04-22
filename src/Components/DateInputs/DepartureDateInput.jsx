@@ -1,4 +1,6 @@
 import { useFlights } from "../../ContextAPI/FlightContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
 
 function DepartureDateInput() {
   const { handleDepartureDateChange, departureDate } = useFlights();
