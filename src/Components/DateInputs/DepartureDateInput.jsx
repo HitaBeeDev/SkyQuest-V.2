@@ -5,7 +5,11 @@ function DepartureDateInput() {
 
   return (
     <div className="flex flex-row justify-between">
-      <label className="text-sm font-normal">Departure Date:</label>
+      <div className="w-1/2 flex flex-row justify-start items-center gap-2">
+        <FontAwesomeIcon icon={faPlaneDeparture} className="text-xs" />
+        <label className="text-sm font-normal">Departure Date:</label>
+      </div>
+
       <input
         type="date"
         placeholder="From"
