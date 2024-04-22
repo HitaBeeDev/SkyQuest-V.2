@@ -20,7 +20,7 @@ function ArrivalSearchInput() {
         <div className="w-1/2 flex flex-row justify-start items-center gap-2">
           <FontAwesomeIcon icon={faPlaneArrival} className="text-xs" />
           <label className="text-sm font-normal">
-            What's your return point?
+            What's your return point?Your Departure Point: Destination
           </label>
         </div>
 
